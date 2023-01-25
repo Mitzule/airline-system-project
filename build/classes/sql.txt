@@ -1,0 +1,47 @@
+create table cancellation(pnr_no varchar(10), cancellation_no varchar(10), cancellation_date varchar(20), fli_code varchar(15));
+
+create table flight(f_code varchar(10), f_name varchar(20), src varchar(30), dst varchar(30));
+
+create table passenger(pnr_no varchar(10), address varchar(30), nationality varchar(15), name varchar(25), gender varchar(10), ph_no varchar(15), passport_no varchar(20), fl_code varchar(10));
+
+create table payment(pnr_no varchar(10), ph_no varchar(15), cheque_no varchar(15), card_no varchar(20), paid_amt varchar(10), pay_date varchar(20));
+
+create table reservation(pnr_no varchar(10), ticket_id varchar(10), f_code varchar(10), jny_date varchar(20), jny_time varchar(20), src varchar(20), dst varchar(20));
+
+create table sector(flight_code varchar(20), capacity varchar(10), class_code varchar(10), class_name varchar(20));
+
+create table login(username varchar(25), password varchar(25));
+
+insert into cancellation VALUES
+('12345', '1', '01/01/2022', 'FC123');
+
+insert into flight VALUES
+('AI111', 'AIR RO-1', 'TIMISOARA', 'BAIA MARE'),
+('AI222', 'AIR RO-2', 'TIMISOARA', 'CLUJ NAPOCA'),
+('AI333', 'AIR RO-3', 'TIMISOARA', 'BUCURESTI'),
+('AI444', 'AIR RO-4', 'TIMISOARA', 'IASI'),
+('AI555', 'AIR RO-5', 'TIMISOARA', 'CONSTANTA');
+
+insert into login VALUES
+('admin', 'admin');
+
+insert into passenger VALUES
+('12345', 'ADDRESS 1', 'ROMAN', 'IGNAT MIHAI', 'MALE', '0771068526', 'XM12345', 'AI111'),
+('98765', 'ADDRESS 2', 'ROMAN', 'ALESIA LOBONT', 'FEMALE', '0771123456', 'AX12345', 'AI111');
+
+insert into payment values
+('12345', '0771068526', '354567', '4351-1234-2345-3456', '4000', '01/01/2022');
+
+insert into reservation VALUES
+('12345', 'ID1', 'AI111', '01/01/2022', '20:00', 'TIMISOARA', 'BAIA MARE'),
+('23456', 'ID2', 'AI222', '02/01/2022', '19:00', 'TIMISOARA', 'CLUJ NAPOCA'),
+('34567', 'ID3', 'AI333', '03/01/2022', '18:00', 'TIMISOARA', 'BUCURESTI'),
+('45678', 'ID4', 'AI444', '04/01/2022', '17:00', 'TIMISOARA', 'IASI'),
+('56789', 'ID5', 'AI555', '05/01/2022', '16:00', 'TIMISOARA', 'CONSTANTA');
+
+insert into sector VALUES
+('AI111', '200', 'C111', 'WIZZ111'),
+('AI222', '220', 'C222', 'WIZZ222'),
+('AI333', '300', 'B333', 'RYAN333'),
+('AI444', '250', 'B444', 'RYAN444'),
+('AI555', '200', 'A555', 'TAROM555');
